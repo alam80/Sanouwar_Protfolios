@@ -12,11 +12,4 @@ Welcome to my personal developer portfolio built using **React.js**. This projec
 - 🚀 Git & GitHub
 - 🌐 Netlify / GitHub Pages (for deployment)
 
----
-
-
-
----
-
-## 📁 Folder Structure
 
