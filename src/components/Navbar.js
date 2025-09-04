@@ -17,7 +17,7 @@ function Navbar() {
         {/* 🔰 Logo */}
         <Link to="/" className="logo" onClick={closeMobileMenu}>
           
-          <span className="logo-text">Protfolios</span>
+          <span className="logo-text">Sanouwar</span>
         </Link>
 
         {/* 📱 Hamburger */}
