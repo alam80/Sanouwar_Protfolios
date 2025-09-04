@@ -159,7 +159,7 @@ function Navbar() {
             </NavLinkStyled>
           ))}
           <ContactBtn to="/contact" onClick={closeMobileMenu}>
-            Contact Me
+            Hire Me
           </ContactBtn>
         </NavMenu>
       </Container>
