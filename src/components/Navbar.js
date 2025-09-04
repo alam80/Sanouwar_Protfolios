@@ -3,10 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { styled } from "@mui/system";
 
-// Styled Components
+// ✅ Centralized colors (easy to update later)
+const COLORS = {
+  primary: "#0d1b2a",
+  accent: "#ffd54f",
+  accentHover: "#fff176",
+  text: "#ffffff",
+};
+
+// ==================== Styled Components ====================
 const Header = styled("header")({
   width: "100%",
-  background: "#0d1b2a",
+  background: COLORS.primary,
   boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
   position: "sticky",
   top: 0,
@@ -16,7 +24,7 @@ const Header = styled("header")({
 const Container = styled("div")({
   maxWidth: "1200px",
   margin: "0 auto",
-  padding: "0.5rem 1.5rem",
+  padding: "0.75rem 1.5rem",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -26,20 +34,22 @@ const Logo = styled(Link)({
   display: "flex",
   alignItems: "center",
   textDecoration: "none",
-  color: "#ffd54f",
-  fontWeight: 700,
-  fontSize: "1.5rem",
+  color: COLORS.accent,
+  fontWeight: 800,
+  fontSize: "1.6rem",
   letterSpacing: "1px",
-  "& .logo-text": {
-    marginLeft: "4px",
+  "&:hover": {
+    opacity: 0.9,
   },
 });
 
-const MenuIcon = styled("div")(({ theme }) => ({
+const MenuIcon = styled("button")(({ theme }) => ({
   display: "none",
   fontSize: "2rem",
-  color: "#ffd54f",
+  color: COLORS.accent,
   cursor: "pointer",
+  background: "transparent",
+  border: "none",
   [theme.breakpoints.down("md")]: {
     display: "block",
   },
@@ -49,60 +59,61 @@ const NavMenu = styled("nav")(({ theme, mobile }) => ({
   display: "flex",
   alignItems: "center",
   gap: "1.5rem",
+  transition: "all 0.3s ease-in-out",
   [theme.breakpoints.down("md")]: {
     position: "absolute",
     top: "64px",
     left: 0,
     width: "100%",
-    background: "#0d1b2a",
+    background: COLORS.primary,
     flexDirection: "column",
     alignItems: "center",
-    gap: "1.2rem",
-    padding: mobile ? "2rem 0" : 0,
-    transition: "max-height 0.3s",
+    gap: "1.5rem",
+    padding: mobile ? "2rem 0" : "0",
     maxHeight: mobile ? "400px" : "0",
     overflow: "hidden",
-    boxShadow: mobile ? "0 8px 24px rgba(0,0,0,0.08)" : "none",
+    boxShadow: mobile ? "0 8px 24px rgba(0,0,0,0.1)" : "none",
     zIndex: 99,
   },
 }));
 
 const NavLinkStyled = styled(Link)(({ theme }) => ({
-  color: "#fff",
+  color: COLORS.text,
   textDecoration: "none",
   fontSize: "1.05rem",
   fontWeight: 500,
-  padding: "0.3rem 0.7rem",
-  borderRadius: "4px",
+  padding: "0.4rem 0.8rem",
+  borderRadius: "6px",
   transition: "background 0.2s, color 0.2s",
   "&.active": {
-    color: "#ffd54f",
-    background: "rgba(255,213,79,0.08)",
+    color: COLORS.accent,
+    background: "rgba(255,213,79,0.12)",
   },
   "&:hover": {
-    color: "#ffd54f",
-    background: "rgba(255,213,79,0.08)",
+    color: COLORS.accent,
+    background: "rgba(255,213,79,0.12)",
   },
 }));
 
 const ContactBtn = styled(Link)(({ theme }) => ({
-  background: "#ffd54f",
-  color: "#0d1b2a",
+  background: COLORS.accent,
+  color: COLORS.primary,
   fontWeight: 600,
-  borderRadius: "20px",
-  padding: "0.4rem 1.2rem",
+  borderRadius: "24px",
+  padding: "0.5rem 1.3rem",
   marginLeft: "0.5rem",
   textDecoration: "none",
-  transition: "background 0.2s, color 0.2s",
+  transition: "background 0.2s, transform 0.2s",
   "&:hover": {
-    background: "#fff176",
-    color: "#0d1b2a",
+    background: COLORS.accentHover,
+    transform: "translateY(-2px)",
   },
   [theme.breakpoints.down("md")]: {
     marginLeft: 0,
   },
 }));
 
+// ==================== Component ====================
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
@@ -110,27 +121,34 @@ function Navbar() {
   const toggleMobileMenu = () => setIsMobile(!isMobile);
   const closeMobileMenu = () => setIsMobile(false);
 
+  // ✅ Extract nav links (easy to manage / expand later)
+  const navLinks = [
+    { label: "Home", path: "/" },
+    { label: "Services", path: "/services" },
+    { label: "About", path: "/about" },
+    { label: "Projects", path: "/projects" },
+  ];
+
   return (
     <Header>
       <Container>
         {/* Logo */}
         <Logo to="/" onClick={closeMobileMenu}>
-          <span className="logo-text">Protfolios</span>
+          Sanouwar
         </Logo>
 
-        {/* Hamburger */}
-        <MenuIcon onClick={toggleMobileMenu}>
+        {/* Hamburger Icon */}
+        <MenuIcon
+          aria-label="Menu"
+          aria-expanded={isMobile}
+          onClick={toggleMobileMenu}
+        >
           {isMobile ? <FaTimes /> : <FaBars />}
         </MenuIcon>
 
-        {/* Nav Links */}
-        <NavMenu mobile={isMobile}>
-          {[
-            { label: "Home", path: "/" },
-            { label: "Services", path: "/services" },
-            { label: "About", path: "/about" },
-            { label: "Projects", path: "/projects" },
-          ].map((item, index) => (
+        {/* Navigation Links */}
+        <NavMenu mobile={isMobile} aria-label="Main Navigation">
+          {navLinks.map((item, index) => (
             <NavLinkStyled
               key={index}
               to={item.path}
