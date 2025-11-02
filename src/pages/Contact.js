@@ -30,7 +30,7 @@ export default function Contact() {
       setLoading(true);
 
       const form = new FormData();
-      form.append("access_key", "81e0e7e3-5646-4aeb-82c8-d3a2673b725e");
+      form.append("access_key", "7061a346-4729-4933-826a-ccdbae2e4b4f");
       form.append("subject", "New Contact Form Message");
       form.append("name", formData.name);
       form.append("email", formData.email);
