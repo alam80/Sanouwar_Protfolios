@@ -162,7 +162,7 @@ function Home() {
               variant="outlined"
               size="large"
               sx={{ borderRadius: "25px", textTransform: "none" }}
-              href="/images/resume.pdf"
+              href="/newresume.pdf"
               target="_blank"
               download="Sanouwar_Alam_Resume.pdf"
             >
