@@ -117,7 +117,7 @@ function Footer() {
           <CenterBox>
             <SocialIcons>
               <a
-                href="https://github.com/"
+                href="https://github.com/alam80"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -125,20 +125,12 @@ function Footer() {
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://linkedin.com/in/sanouwar12"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <FaTwitter />
+               
               </a>
             </SocialIcons>
             <Title>Sanouwar Alam</Title>
