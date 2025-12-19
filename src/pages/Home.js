@@ -187,6 +187,8 @@ function Home() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
+                 <FaLinkedin />
+            </a>
             
             </a>
           </SocialIcons>
