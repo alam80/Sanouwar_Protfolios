@@ -158,15 +158,17 @@ function Home() {
             >
               Contact Me
             </Button>
-            <Button
+        <Button
   variant="outlined"
   size="large"
   sx={{ borderRadius: "25px", textTransform: "none" }}
-  href="https://drive.google.com/file/d/18IQLPO6kog1fNp09ssduMYOfizYCidzr/view?usp=drivesdk=Sanouwar cv.js"
+  href="https://drive.google.com/uc?export=download&id=18IQLPO6kog1fNp09ssduMYOfizYCidzr"
   target="_blank"
+  rel="noopener noreferrer"
 >
   Download Resume
 </Button>
+
 
           </ButtonGroup>
 
