@@ -159,15 +159,15 @@ function Home() {
               Contact Me
             </Button>
             <Button
-              variant="outlined"
-              size="large"
-              sx={{ borderRadius: "25px", textTransform: "none" }}
-              href="/newresume.pdf"
-              target="_blank"
-              download="Sanouwar cv.pdf"
-            >
-              Download Resume
-            </Button>
+  variant="outlined"
+  size="large"
+  sx={{ borderRadius: "25px", textTransform: "none" }}
+  href="https://drive.google.com/file/d/18IQLPO6kog1fNp09ssduMYOfizYCidzr/view?usp=drivesdk"
+  target="_blank"
+>
+  Download Resume
+</Button>
+
           </ButtonGroup>
 
           <SocialIcons>
