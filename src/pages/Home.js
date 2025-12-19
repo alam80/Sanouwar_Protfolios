@@ -182,7 +182,7 @@ function Home() {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/sanouwar12"
+              href="https://linkedin.com/in/sanouwar12"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
