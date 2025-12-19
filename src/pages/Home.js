@@ -164,7 +164,7 @@ function Home() {
               sx={{ borderRadius: "25px", textTransform: "none" }}
               href="/newresume.pdf"
               target="_blank"
-              download="Sanouwar_Alam_Resume.pdf"
+              download="Sanouwar cv.pdf"
             >
               Download Resume
             </Button>
