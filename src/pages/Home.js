@@ -174,7 +174,7 @@ function Home() {
 
           <SocialIcons>
             <a
-              href="https://github.com/"
+              href="https://github.com/alam80"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -182,7 +182,7 @@ function Home() {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/"
+              href="https://linkedin.com/sanouwar12"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
